@@ -806,11 +806,11 @@ class StoryProgressIndicator extends StatelessWidget {
       ),
       foregroundPainter: IndicatorOval(
         Colors.white.withOpacity(0.8),
-        1.0,
+        this.value,
       ),
       painter: IndicatorOval(
         Colors.white.withOpacity(0.4),
-        this.value,
+        1.0,
       ),
     );
   }
@@ -827,7 +827,7 @@ class IndicatorOval extends CustomPainter {
     final paint = Paint()..color = this.color;
     canvas.drawRRect(
         RRect.fromRectAndRadius(
-            Rect.fromLTWH(0, 0, size.width * this.widthFactor, size.height),
+            Rect.fromLTWH(size.width - size.width * this.widthFactor, 0, size.width, size.height),
             Radius.circular(3)),
         paint);
   }
