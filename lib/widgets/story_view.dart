@@ -827,7 +827,7 @@ class IndicatorOval extends CustomPainter {
     final paint = Paint()..color = this.color;
     canvas.drawRRect(
         RRect.fromRectAndRadius(
-            Rect.fromLTWH(size.width - size.width * this.widthFactor, 0, size.width, size.height),
+            Rect.fromLTWH(size.width - size.width * this.widthFactor, 0, size.width * this.widthFactor, size.height),
             Radius.circular(3)),
         paint);
   }
